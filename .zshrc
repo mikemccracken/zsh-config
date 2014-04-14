@@ -100,8 +100,7 @@ alias -g T='|tail'
 export LESS=-cex3M
 export HELPDIR=/usr/local/lib/zsh/help  # directory for run-help function to find docs
 
-# source environment stuff
-source $HOME/.environment
+export EDITOR='emacsclient -n'
 
 
 # automatically remove duplicates from these arrays
