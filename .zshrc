@@ -97,7 +97,6 @@ alias -g H='|head'
 alias -g T='|tail'
 
 # Some environment variables
-export LESS=-cex3M
 export HELPDIR=/usr/local/lib/zsh/help  # directory for run-help function to find docs
 
 export EDITOR='emacsclient -n'
