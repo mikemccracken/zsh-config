@@ -100,6 +100,7 @@ alias -g T='|tail'
 export HELPDIR=/usr/local/lib/zsh/help  # directory for run-help function to find docs
 
 export EDITOR='emacsclient -n'
+export ACK_PAGER='less -R'
 
 
 # automatically remove duplicates from these arrays
