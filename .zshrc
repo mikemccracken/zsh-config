@@ -63,6 +63,8 @@ alias lsa='ls -ld .*'
 setenv() { typeset -x "${1}${1:+=}${(@)argv[2,$#]}" }  # csh compatibility
 freload() { while (( $# )); do; unfunction $1; autoload -U $1; shift; done }
 
+source "$HOME/.zsh.d/zsh-git-prompt/zshrc.sh"
+
 bzrev() {
     echo "Pulling in trunk..."
     cd trunk
@@ -291,9 +293,9 @@ if [[ $NONTERMINAL == yeah ]] then
     export TERM=dumb
 else
     colorize
-    export PS1="${COLOR_ROOT_BOLD}${COLOR_p_h}%h${COLOR_RESET} ${COLOR_ROOT_BOLD}${COLOR_ROOT}%S${ROOTTEXT}%s${COLOR_RESET}$ROOTPROMPTADD${COLOR_p_n}%n${COLOR_RESET}${COLOR_at}@${COLOR_RESET}${COLOR_p_m}%m${COLOR_RESET} | ${COLOR_MY_DATE}${MY_DATE}${COLOR_RESET} ${COLOR_MY_TIME}${MY_TIME}${COLOR_RESET}%E
+    export PS1='${COLOR_ROOT_BOLD}${COLOR_p_h}%h${COLOR_RESET} ${COLOR_ROOT_BOLD}${COLOR_ROOT}%S${ROOTTEXT}%s${COLOR_RESET}$ROOTPROMPTADD${COLOR_p_n}%n${COLOR_RESET}${COLOR_at}@${COLOR_RESET}${COLOR_p_m}%m${COLOR_RESET} | ${COLOR_MY_DATE}${MY_DATE}${COLOR_RESET} ${COLOR_MY_TIME}${MY_TIME}${COLOR_RESET}%E | $(git_super_status)
 ${COLOR_p_slash}%/${COLOR_RESET}
-${COLOR_p_hash}%#${COLOR_REAL_RESET} "
+${COLOR_p_hash}%#${COLOR_REAL_RESET} '
     
 #export RPROMPT=""
 
